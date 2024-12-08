@@ -77,39 +77,52 @@ class Reviewer(Mentor):
     def __str__(self):
         return f'Имя: {self.name}\n'f'Фамилия: {self.surname}\n'
 
+# def
 
 
 
+first_student = Student('Evan', 'Hill')
+first_student.finished_courses = ['Ruby']
+first_student.courses_in_progress = ['Python']
 
-some_student = Student('Ruoy', 'Eman')
-some_student1 = Student('Gaibe', 'Name')
+second_student = Student('Eva', 'Adam')
+second_student.finished_courses = ['C++']
+second_student.courses_in_progress = ['Python', 'Ruby']
+
+first_mentor = Mentor('Jonh', 'Jones')
+first_mentor.courses_attached = ['Python']
+
+second_mentor = Mentor('Wendy', 'Davis')
+second_mentor.courses_attached = ['Python' ,'Ruby']
+
+first_lecturer = Lecturer('Jonh', 'Jones')
+first_mentor.courses_attached = ['Python']
+
+second_lecturer = Lecturer('Wendy', 'Davis')
+
+first_reviewer = Reviewer('Jonh','Jones')
+second_reviewer = Reviewer('Wendy', 'Jones')
+
+first_student.rate_hw(first_lecturer, 'Python', 8)
+first_student.rate_hw(first_lecturer, 'Python', 10)
+second_student.rate_hw(second_lecturer, 'Python', 7)
+second_student.rate_hw(second_lecturer, 'Ruby', 5)
+
+first_reviewer.rate_hw(first_student, 'Python', 6)
+first_reviewer.rate_hw(first_student, 'Python', 10)
+
+second_reviewer.rate_hw(second_student, 'Python', 3)
+second_reviewer.rate_hw(second_student, 'Python', 7)
+second_reviewer.rate_hw(second_student, 'Ruby', 10)
+second_reviewer.rate_hw(second_student, 'Ruby', 6)
 
 
-some_student.courses_in_progress += ['Python']
-some_student1.courses_in_progress += ['C++']
-
-
-some_student.finished_courses += ["C++"]
-some_student.finished_courses += ["Java"]
-
-some_lecturer1 = Lecturer("Go", "Ahead")
-
-some_lecturer = Lecturer("Some", "Buddy")
-
-some_lecturer.courses_attached = ['Python']
-some_lecturer1.courses_attached = ['C++']
-
-some_student.rate_hw(some_lecturer, 'Python', 10)
-some_student.rate_hw(some_lecturer1, 'C++', 10)
-
-some_reviewer = Reviewer("Some", "Buddy")
-some_reviewer.courses_attached += ['Python']
-some_reviewer.courses_attached += ['C++']
-
-
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student1, 'C++', 5)
-# print(some_lecturer)
-# print(some_reviewer)
-# print(some_student)
+# print(first_student)
+# print(second_student)
+# print(first_student == second_student)
+#
+# print(first_lecturer)
+# print(second_lecturer)
+# print(first_lecturer == second_lecturer)
+print(first_lecturer)
+print(first_mentor.courses_attached)
