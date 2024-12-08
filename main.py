@@ -77,10 +77,6 @@ class Reviewer(Mentor):
     def __str__(self):
         return f'Имя: {self.name}\n'f'Фамилия: {self.surname}\n'
 
-# def
-
-
-
 first_student = Student('Evan', 'Hill')
 first_student.finished_courses = ['Ruby']
 first_student.courses_in_progress = ['Python']
@@ -100,7 +96,7 @@ first_mentor.courses_attached = ['Python']
 
 second_lecturer = Lecturer('Wendy', 'Davis')
 
-first_reviewer = Reviewer('Jonh','Jones')
+first_reviewer = Reviewer('Jonh', 'Jones')
 second_reviewer = Reviewer('Wendy', 'Jones')
 
 first_student.rate_hw(first_lecturer, 'Python', 8)
@@ -116,7 +112,6 @@ second_reviewer.rate_hw(second_student, 'Python', 7)
 second_reviewer.rate_hw(second_student, 'Ruby', 10)
 second_reviewer.rate_hw(second_student, 'Ruby', 6)
 
-
 # print(first_student)
 # print(second_student)
 # print(first_student == second_student)
@@ -124,5 +119,23 @@ second_reviewer.rate_hw(second_student, 'Ruby', 6)
 # print(first_lecturer)
 # print(second_lecturer)
 # print(first_lecturer == second_lecturer)
-print(first_lecturer)
-print(first_mentor.courses_attached)
+# print(first_lecturer)
+# print(first_student.courses_in_progress)
+
+def ave():
+    first = 0
+    second = 0
+    for i in first_student.average_grades():
+        first += i
+    for i in second_student.average_grades():
+        second += i
+    return (first + second) / 2
+
+def ave1():
+    first = 0
+    second = 0
+    for i in first_lecturer.average_grades():
+        first += i
+    for i in second_lecturer.average_grades():
+        second += i
+    return (first + second) / 2
